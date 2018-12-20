@@ -1,6 +1,7 @@
 package com.youtube.demo.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import com.youtube.demo.model.User;
 
@@ -21,5 +22,7 @@ public interface UserService {
 	List<User> findAll();
 
 	void deleteUser(Long id);
+
+	Optional<User> findByUserId(Long userId);
 
 }

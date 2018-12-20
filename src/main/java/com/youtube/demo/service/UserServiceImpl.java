@@ -1,6 +1,7 @@
 package com.youtube.demo.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,6 +28,11 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public void deleteUser(Long id) {
 		this.userRepository.deleteById(id);
+	}
+
+	@Override
+	public Optional<User> findByUserId(Long userId) {
+		return this.userRepository.findById(userId);
 	}
 
 }
